@@ -1,0 +1,124 @@
+@mixin bg-z{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.slide {
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // background: url('../img/01.png') ;
+  
+    background-color: #555;
+    color:#fff;
+
+    &::before{
+        content:'';
+        
+    }
+    cursor: grab;
+    &:active{
+        cursor:grabbing;
+    }
+    &-norway{
+        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%), 
+        linear-gradient(181deg, rgba(0, 0, 0, 0.20) 0.91%, rgba(255, 255, 255, 0.00) 116.71%, rgba(255, 255, 255, 0.00) 116.72%), 
+        url('../img/01.png') ;
+
+        @include bg-z;
+
+    }
+    &-austria{
+        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(181deg, rgba(0, 0, 0, 0.20) 0.91%, rgba(255, 255, 255, 0.00) 116.71%, 
+        rgba(255, 255, 255, 0.00) 116.72%), 
+        url('../img/02.png');
+        @include bg-z;
+        
+    }
+    &-uae{
+        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(181deg, rgba(0, 0, 0, 0.20) 0.91%,
+         rgba(255, 255, 255, 0.00) 116.71%, rgba(255, 255, 255, 0.00) 116.72%),
+          url('../img/03.png');
+          @include bg-z;
+    }
+    &-thailand
+    {background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(181deg, rgba(0, 0, 0, 0.20) 0.91%,
+         rgba(255, 255, 255, 0.00) 116.71%, rgba(255, 255, 255, 0.00) 116.72%), 
+         url('../img/04.png');
+         @include bg-z;
+
+
+    }
+    &-morocco{
+        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(181deg, rgba(0, 0, 0, 0.20) 0.91%, rgba(255, 255, 255, 0.00) 116.71%, rgba(255, 255, 255, 0.00) 116.72%),
+         url('../img/05.png'),;
+         @include bg-z;
+    }
+    @media (max-width:$pc){
+         padding-bottom: 60px; 
+    }
+    @media (max-width:$mobile){
+         padding-top: 100px;
+         padding-bottom: 40px; 
+    }
+    &__header {
+        text-align: center;
+        position: relative;
+    }
+
+    &__tagline {
+        position: absolute;
+        top: -8px;
+        width: 100%;
+        font-weight: 500;
+        font-size: 1.56vw;
+        letter-spacing: 0.55em;
+        line-height: 1.23;
+        color:rgba(255,255,255,0.7);
+        @media (max-width:$mobile){
+             font-size: 3vw; 
+        }
+    }
+
+    &__title {
+        color: #FFF;
+        font-size: 13vw;
+        line-height: 1.22;
+        font-weight: 700;
+       
+        @media (max-width:$mobile){
+              font-size: 19vw;
+        }
+        span{
+            padding: 0px 10px;
+            background: linear-gradient(
+                47.06deg,
+                #000 -3.87%,
+                rgba(255,255,255,0)20.89&
+            ),
+            #fff;
+            -webkit-background-clip: text;
+            
+        }
+    }
+
+    &__locations {
+        display: flex;
+        column-gap: 30px;
+        width: 70%;
+        margin: 0 auto;
+        @media (max-width: em(1023)){
+              width: 90%;
+        }
+        @media (max-width:$mobile){
+            width: 90%;
+            flex-direction: column;
+            row-gap: 20px;
+            
+        }
+    }
+}
+

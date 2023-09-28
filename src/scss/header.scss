@@ -1,0 +1,196 @@
+.header {
+    height: 100vh;
+    position: relative;
+    background-color: #c4c4c4;
+    color: #fff;
+    
+    a{
+        color: #fff;
+    }
+
+    &__container {
+    }
+
+    &__content {
+        position: absolute;
+        z-index: 9;
+        top: 50px;
+        left: 70px;
+        right: 70px;
+        bottom: 80px;
+        pointer-events: none;
+        
+        @media (max-width:$pc){
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            bottom: 60px;
+        }
+        @media (max-width:$mobile){
+            top: 30px;
+            left: 5%;
+            right: 5%;
+            bottom: 30px; 
+        }
+    }
+
+    &__nav {
+    }
+
+    &__socials {
+        pointer-events: all;
+        position: absolute;
+        z-index: 9;
+        left: 0;
+        top: 50%;
+        transform: translate(0px,-50%);
+        @media (max-width:$mobile){
+             display: none; 
+        }
+        @media (max-width: em(600)){
+              top: 40%;
+        }
+    }
+
+    &__see-more {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        pointer-events: all;
+        @media (max-width: em(1023)){
+              display: none;
+        }
+    }
+
+    &__slider-controls {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        pointer-events: all;
+        @media (max-width: em(1023)){
+            display: none;
+      }
+
+    }
+
+}
+
+
+.menu {
+    &__list{
+        li{
+            &:not(:last-child) {
+                margin: 0px 0px 30px 0px;
+            }
+        }
+    }
+    &__item {
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+       
+    }
+
+    &__link {
+        display: inline-block;
+        color: #FFF;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: rem(30) ;
+        white-space: nowrap;
+        &_last{
+            margin: 0px 0px 0px 0px;
+        }
+    }
+    &__icon {
+    }
+
+    &__body {
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        top: 0;
+        right: -100%;//
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        z-index: 4;
+        padding: rem(130)  rem(60) rem(80) rem(60);
+        @media (max-width:$mobile){
+            padding: rem(100)  rem(35) rem(40) rem(35);
+        }
+        @media (max-width:$pc){
+            width: 40%;
+        }
+        @media (max-width:$mobile){
+             width: 50%; 
+        }
+        @media (max-width: em(500)){
+            width: 70%; 
+        }
+        @media (max-width:$mobileSmall){
+             width: 100%; 
+        }
+        &::before{
+        content:'';
+        min-height: rem(78);
+        position: fixed;
+        width: 25%;
+        z-index: 8;
+        top: 0;
+        right: 0;
+        background-color:#000;
+        transform: translate(0px,-100%);
+        @media (max-width:$pc){
+            width: 40%;
+        }
+        @media (max-width:$mobile){
+             width: 50%; 
+        }
+        @media (max-width: em(500)){
+            width: 70%; 
+        }
+        @media (max-width:$mobileSmall){
+             width: 100%; 
+        }
+        }
+        &._show{
+
+        }
+        &._active{
+        right: 0;
+        &::before{
+            
+            transform: translate(0px,0px);
+        }
+    }
+    }
+}
+
+.icon-menu {
+    transition: all 0.3s ease 0s;
+    
+        display: block;
+       position: absolute;
+       top: 0;
+       right: 0;
+       width: 30px;
+        height: 18px;
+        
+        cursor: pointer;
+        z-index: 10;
+        span{ /**/ transition: all 0.4s ease 0s;top: 8px; right: 0;position: absolute; width: 100%; height: 2px;background-color: #898989;;
+            &:first-child{top: 0px;}
+            &:nth-child(2){width: 80%; }
+            &:last-child{top: auto; bottom: 0px;width: 60%;}
+        } 
+        &._active{
+           
+            span{transform: scale(0); /**/transition: all 0.4s ease 0s;
+                &:first-child{transform:rotate(-45deg); top:8px; width: 100%;}
+                &:last-child{transform:rotate(45deg); bottom:8px; width: 100%;}
+            }
+        }
+   
+}
